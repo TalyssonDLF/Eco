@@ -346,3 +346,15 @@
 @media (max-width: 699px) {
   .header { border-top: 0; }
 }
+
+/* Mobile: keep the berry branch visible without overlapping the PROJETOS title. */
+@media (max-width: 699px) {
+  .about .ramo {
+    left: auto;
+    right: -12px;
+    width: 76px;
+    bottom: -96px;
+    transform: rotate(8deg);
+    z-index: 95;
+  }
+}
