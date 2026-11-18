@@ -469,9 +469,12 @@
     position: absolute;
     width: 178px;
     max-width: none;
-    left: 6px;
+    /* A extremidade do galho está a ~84% da largura do desenho. */
+    /* Posicionar o desenho 149px à esquerda encosta o galho na divisão do painel. */
+    left: -149px;
     right: auto;
-    bottom: -18px;
+    /* A ponta da cauda continua abaixo do galho; o galho termina na borda inferior. */
+    bottom: -21px;
     z-index: 110;
   }
 }
