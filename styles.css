@@ -454,3 +454,6 @@
     bottom: 12px;
   }
 }
+
+/* Remove a faixa cinza entre os projetos e o formulário em todas as telas. */
+.contact { border-top: 0; }
