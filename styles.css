@@ -676,3 +676,28 @@
     transform: translateX(-24px);
   }
 }
+
+
+/* Ícone original das três frutinhas roxas substitui apenas o galho do rodapé.
+   O PNG já foi recortado em volta da ilustração, sem áreas transparentes extras. */
+.project.red > .ramo-footer {
+  width: 106px;
+  height: auto;
+  top: auto;
+  right: -7px;
+  bottom: 5px;
+  left: auto;
+  transform: none;
+  object-fit: contain;
+  object-position: center;
+  z-index: 95;
+}
+@media (max-width: 699px) {
+  .project.red > .ramo-footer {
+    width: 72px;
+    height: auto;
+    right: -7px;
+    bottom: 7px;
+    transform: none;
+  }
+}
