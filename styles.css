@@ -652,3 +652,27 @@
     right: -10px;
   }
 }
+
+
+/* Ajustes pontuais indicados na revisão: ramo de frutas e texto do projeto vermelho.
+   Mantém fotografias, grid e a experiência mobile inalterados. */
+@media (min-width: 700px) and (max-width: 1023px) {
+  .about .ramo {
+    width: 152px;
+    left: -48px;
+    top: 266px;
+  }
+  .project.red .project-copy {
+    transform: translateX(-12px);
+  }
+}
+@media (min-width: 1024px) {
+  .about .ramo {
+    width: 178px;
+    left: -68px;
+    top: 252px;
+  }
+  .project.red .project-copy {
+    transform: translateX(-24px);
+  }
+}
