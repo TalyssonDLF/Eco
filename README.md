@@ -1,5 +1,18 @@
-# ECO — Gincanas Escolares
+# ECO Gincanas Escolares
+Landing page responsiva **mobile-first**, baseada no layout original do Figma Design.
 
-Landing page responsiva mobile-first, fiel ao design da ECO.
+## Render
+- Serviço: **Static Site**
+- Branch: **main**
+- Build command: `echo 'Site estático ECO'`
+- Publish directory: `.`
+- Auto-deploy: **yes**
 
-Este projeto contém HTML, CSS, JavaScript e assets visuais. Publicação estática no Render, com deploy automático da branch `main`.
+## Conteúdo
+- Hero com logo ECO e ilustrações sobrepostas em primeiro plano
+- Seções Quem Somos, Projetos (fotografias fixas, sem carrossel) e Contato
+- Menu responsivo, formulário com validação
+- As imagens são obtidas do Figma e armazenadas no próprio repositório
+- Fonte de títulos: Changa One. Fonte do texto: MADE Tommy Soft, caso os arquivos licenciados sejam fornecidos (fallback: Poppins)
+
+O formulário ainda precisa de e-mail real em `script.js`. Os telefones no protótipo são ilustrativos.

@@ -1,0 +1,42 @@
+name: Importar assets oficiais ECO
+on:
+  push:
+    paths:
+      - .github/workflows/import-assets.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  import-assets:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Baixar imagens oficiais do Figma e armazenar no repositório
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p assets
+      curl -fSL --retry 3 --connect-timeout 20 -o "assets/logo.png" "https://www.figma.com/api/mcp/asset/879db7fa-8f09-45a7-9c6f-17adf4b4aa03/1c84f.png"
+      curl -fSL --retry 3 --connect-timeout 20 -o "assets/folha.png" "https://www.figma.com/api/mcp/asset/879db7fa-8f09-45a7-9c6f-17adf4b4aa03/3f1e8.png"
+      curl -fSL --retry 3 --connect-timeout 20 -o "assets/ramo.png" "https://www.figma.com/api/mcp/asset/879db7fa-8f09-45a7-9c6f-17adf4b4aa03/30188.png"
+      curl -fSL --retry 3 --connect-timeout 20 -o "assets/cacau.png" "https://www.figma.com/api/mcp/asset/879db7fa-8f09-45a7-9c6f-17adf4b4aa03/6320f.png"
+      curl -fSL --retry 3 --connect-timeout 20 -o "assets/caju.png" "https://www.figma.com/api/mcp/asset/879db7fa-8f09-45a7-9c6f-17adf4b4aa03/4a451.png"
+      curl -fSL --retry 3 --connect-timeout 20 -o "assets/tucano.png" "https://www.figma.com/api/mcp/asset/879db7fa-8f09-45a7-9c6f-17adf4b4aa03/bf789.png"
+      curl -fSL --retry 3 --connect-timeout 20 -o "assets/projeto-1.png" "https://www.figma.com/api/mcp/asset/879db7fa-8f09-45a7-9c6f-17adf4b4aa03/1fa2b.png"
+      curl -fSL --retry 3 --connect-timeout 20 -o "assets/projeto-2.png" "https://www.figma.com/api/mcp/asset/879db7fa-8f09-45a7-9c6f-17adf4b4aa03/c863f.png"
+      curl -fSL --retry 3 --connect-timeout 20 -o "assets/projeto-3.png" "https://www.figma.com/api/mcp/asset/879db7fa-8f09-45a7-9c6f-17adf4b4aa03/4bf9b.png"
+      curl -fSL --retry 3 --connect-timeout 20 -o "assets/instagram.png" "https://www.figma.com/api/mcp/asset/879db7fa-8f09-45a7-9c6f-17adf4b4aa03/fbc1b.png"
+          test -s assets/logo.png
+          test -s assets/folha.png
+      - name: Versionar os assets permanentes
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets
+          if ! git diff --staged --quiet; then
+            git commit -m "assets: importar ilustrações e fotos originais do Figma"
+            git push origin HEAD:main
+          fi
