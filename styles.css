@@ -382,3 +382,75 @@
     bottom: clamp(-47px, -3.57vw, -40px);
   }
 }
+
+
+/* Proporções revisadas com base na captura do desktop enviada em 18/11.
+   Folhas permanecem à frente nas extremidades, sem cobrir o logo ou o título. */
+@media (min-width: 1024px) {
+  .hero .leaf-top {
+    width: clamp(232px, 19.5vw, 282px);
+    left: clamp(-108px, -7.4vw, -75px);
+    top: -86px;
+    right: auto;
+    bottom: auto;
+    transform: rotate(-9deg);
+  }
+  .hero .leaf-right {
+    width: clamp(235px, 20.8vw, 285px);
+    right: clamp(-130px, -8.4vw, -82px);
+    left: auto;
+    top: auto;
+    bottom: -174px;
+    transform: scaleY(-1);
+  }
+  .project .leaf-project {
+    width: 210px;
+    left: -172px;
+    top: 225px;
+    transform: rotate(-70deg);
+  }
+}
+@media (min-width: 700px) and (max-width: 1023px) {
+  .hero .leaf-top {
+    width: clamp(175px, 22vw, 222px);
+    left: -66px;
+    top: -68px;
+    right: auto;
+    bottom: auto;
+    transform: rotate(-9deg);
+  }
+  .hero .leaf-right {
+    width: clamp(174px, 22vw, 226px);
+    right: -85px;
+    left: auto;
+    top: auto;
+    bottom: -122px;
+    transform: scaleY(-1);
+  }
+  .project .leaf-project {
+    width: 160px;
+    left: -126px;
+    top: 175px;
+  }
+}
+@media (max-width: 699px) {
+  .hero .leaf-top {
+    width: 162px;
+    left: -70px;
+    top: -78px;
+    transform: rotate(-15deg);
+  }
+  .hero .leaf-right {
+    width: 160px;
+    right: -69px;
+    bottom: -68px;
+    top: auto;
+    transform: rotate(168deg);
+  }
+  .project .leaf-project {
+    width: 118px;
+    left: -66px;
+    top: auto;
+    bottom: 12px;
+  }
+}
