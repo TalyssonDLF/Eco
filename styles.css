@@ -331,3 +331,13 @@
     transform: rotate(-35deg);
   }
 }
+
+/* Contact illustration: tucano on the right only on mobile. */
+@media (max-width: 699px) {
+  .contact-message .tucano {
+    left: auto;
+    right: 10px;
+    bottom: -11px;
+    width: 105px;
+  }
+}
