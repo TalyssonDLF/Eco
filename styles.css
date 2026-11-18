@@ -585,3 +585,53 @@
     transform-origin: 50% 50%;
   }
 }
+
+
+/* 18/11 — Real overlap: the leaf is part of the RED section so it
+   can cross the green/red boundary and render BEHIND the cashew.
+   Previous z-index-only fixes could not move it from mid-green. */
+@media (min-width: 700px) {
+  .project.green {
+    position: relative;
+    z-index: 1;
+  }
+  .project.red {
+    position: relative;
+    z-index: 2;
+    overflow: visible;
+    isolation: isolate;
+  }
+  /* The original green leaf would otherwise remain above the transition. */
+  .project.green > .leaf-project {
+    display: none;
+  }
+  .project.red > .leaf-behind-caju {
+    display: block;
+    position: absolute;
+    width: clamp(160px, 17vw, 218px);
+    height: auto;
+    top: clamp(-190px, -15vw, -155px);
+    left: -72px;
+    right: auto;
+    bottom: auto;
+    transform: rotate(90deg);
+    transform-origin: center;
+    z-index: 5;
+    pointer-events: none;
+  }
+  .project.red > .caju {
+    position: absolute;
+    left: 15px;
+    top: -35px;
+    z-index: 10;
+  }
+  .project.red > .project-inner {
+    z-index: 3;
+  }
+}
+@media (max-width: 699px) {
+  /* Existing mobile layout remains intact. */
+  .project.red > .leaf-behind-caju {
+    display: none;
+  }
+}
