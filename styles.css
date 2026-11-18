@@ -645,3 +645,10 @@
   margin-right: auto;
   text-align: left;
 }
+
+/* Cacau no canto superior direito da seção verde — correção desktop/tablet. */
+@media (min-width: 700px) {
+  .project.green > .cacau {
+    right: -10px;
+  }
+}
