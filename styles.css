@@ -341,3 +341,8 @@
     width: 105px;
   }
 }
+
+/* Mobile header: remove the unwanted dark top rule seen on iPhone. */
+@media (max-width: 699px) {
+  .header { border-top: 0; }
+}
