@@ -255,3 +255,79 @@
     padding-right: 8px;
   }
 }
+
+
+/* Mobile decor: visible in the foreground, with a dedicated safe area before text.
+   This supersedes the earlier rule that put decorations behind project content. */
+@media (max-width: 699px) {
+  .project {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+  }
+
+  /* Reserve space for decorations, independent of the paragraph length. */
+  .project.green .project-inner {
+    padding-top: 142px;
+  }
+  .project.red .project-inner {
+    padding-top: 145px;
+  }
+  .project .project-inner,
+  .project .project-copy,
+  .project .project-photo {
+    position: relative;
+    z-index: 3;
+  }
+
+  /* The decoration is above all project content, but does not cross its text area. */
+  .project .cacau,
+  .project .caju,
+  .project .leaf-project,
+  .project .ramo-footer {
+    z-index: 10;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  /* Cocoa: fully visible at upper right, before the green section's heading. */
+  .project .cacau {
+    width: 112px;
+    height: auto;
+    top: 9px;
+    right: 2px;
+    left: auto;
+    transform: rotate(7deg);
+  }
+
+  /* Cashew: fully visible on the upper left, clear of the red heading. */
+  .project .caju {
+    width: 79px;
+    height: auto;
+    top: 10px;
+    left: 14px;
+    right: auto;
+    transform: rotate(-14deg);
+  }
+
+  /* Leaves and berries stay in the lower image area, away from text. */
+  .project .leaf-project {
+    width: 130px;
+    height: auto;
+    top: auto;
+    bottom: 15px;
+    left: -68px;
+    right: auto;
+    transform: rotate(-58deg);
+  }
+  .project .ramo-footer {
+    width: 78px;
+    height: auto;
+    top: auto;
+    bottom: 9px;
+    right: -13px;
+    left: auto;
+    object-fit: contain;
+    transform: rotate(-35deg);
+  }
+}
