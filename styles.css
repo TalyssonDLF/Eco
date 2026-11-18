@@ -566,3 +566,22 @@
   }
 }
 /* Respeitar a leitura mobile; o ajuste desktop não muda suas posições. */
+
+
+/* Orientação e ordem das ilustrações — revisão 18/11/2026 */
+.project.green .leaf-project {
+  /* A folha deve aparecer atrás do caju, não sobre ele. */
+  z-index: 65;
+}
+.project.red .caju {
+  position: absolute;
+  z-index: 120;
+}
+@media (min-width: 700px) {
+  /* O arquivo original tem a ponta no alto. Espelhamos para o canto
+     direito apontando para cima/para dentro da página. */
+  .hero .leaf-right {
+    transform: scaleX(-1) rotate(-8deg);
+    transform-origin: 50% 50%;
+  }
+}
