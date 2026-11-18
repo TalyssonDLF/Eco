@@ -478,3 +478,91 @@
     z-index: 110;
   }
 }
+
+
+/* Revisão visual orientada pelas marcações da designer — 18/11/2026.
+   Desktop e tablet: hierarquia, elementos decorativos e alinhamentos. */
+.send {
+  background: var(--wine);
+  color: var(--cream);
+  border-color: var(--wine);
+}
+.send:hover,
+.send:focus-visible {
+  background: #4c0001;
+  color: #fff7e9;
+}
+@media (min-width: 700px) {
+  /* Manter a folha do hero com a ponta apontando para baixo,
+     acompanhando a transição entre creme e vermelho. */
+  .hero .leaf-right {
+    transform: rotate(167deg);
+  }
+  /* Aumentar levemente o ramo e manter a folhagem visível no canto. */
+  .about .ramo {
+    width: 140px;
+    top: 270px;
+    left: -42px;
+    bottom: auto;
+  }
+  /* Mostrar a folha lateral, antes escondida além da borda da janela. */
+  .project.green .leaf-project {
+    width: 185px;
+    left: -85px;
+    top: 126px;
+    bottom: auto;
+    transform: rotate(85deg);
+  }
+  /* Aproximar o cacau do interior da seção. */
+  .project.green .cacau {
+    right: 24px;
+    top: -25px;
+  }
+  /* No Figma, o texto da seção verde é alinhado à DIREITA. */
+  .project.green .reversed .project-copy,
+  .project.green .reversed .project-copy h3,
+  .project.green .reversed .project-copy p {
+    text-align: right;
+  }
+  .project.green .reversed .project-copy {
+    width: 100%;
+    max-width: none;
+    align-self: center;
+  }
+}
+@media (min-width: 1024px) {
+  /* Texto de projetos mais próximo do lado esquerdo, sem mudar
+     a direção de alinhamento nem deslocar a fotografia. */
+  .project.orange .project-copy {
+    margin-left: -18px;
+  }
+  .about .ramo {
+    width: 164px;
+    top: 258px;
+    left: -61px;
+  }
+  .project.green .leaf-project {
+    width: 218px;
+    left: -90px;
+    top: 150px;
+    transform: rotate(90deg);
+  }
+  .project.green .cacau {
+    right: 32px;
+    top: -26px;
+  }
+  /* Centralização VERTICAL do texto, preservando o alinhamento à esquerda.
+     O texto começa mais abaixo no painel vinho do contato. */
+  .contact-message {
+    align-items: center;
+    padding-top: 95px;
+    padding-bottom: 50px;
+  }
+}
+@media (min-width: 700px) and (max-width: 1023px) {
+  .contact-message {
+    align-items: center;
+    padding-top: 64px;
+  }
+}
+/* Respeitar a leitura mobile; o ajuste desktop não muda suas posições. */
