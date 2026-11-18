@@ -13,3 +13,112 @@
 @media(min-width:1024px){.nav{min-height:125px;justify-content:flex-end;padding:0 5.4%}.mobile-brand,.menu-toggle{display:none}.menu{position:static;display:flex;flex-direction:row;gap:60px;padding:0;background:none;box-shadow:none}.menu a{font-size:13px}.hero{min-height:475px}.hero-inner{display:grid;grid-template-columns:43% 57%;align-items:start;gap:0;padding:18px 5% 65px}.hero-logo{width:100%;max-width:465px}.hero-title{align-items:flex-end;justify-self:end;text-align:right;font-size:clamp(33px,3.78vw,49px);width:100%;margin-top:15px}.hero-title span,.hero-title strong{white-space:nowrap}.leaf-top{width:305px;left:-30px;top:-108px}.leaf-right{width:315px;right:-112px;bottom:-202px}.about{min-height:365px;border-top-width:24px}.about-inner{padding:35px 37px 45px}.about h2{font-size:43px;margin-bottom:11px}.about p{font-size:21px;line-height:1.36}.ramo{width:132px;top:295px;left:-21px;bottom:auto}.project,.project-inner{min-height:500px}.project-inner{display:grid;grid-template-columns:36% 64%;align-items:center;gap:0;padding:44px 5%}.project-inner.reversed{grid-template-columns:62% 38%}.reversed .project-photo,.reversed .project-copy{order:unset}.project-copy{padding:0 28px 0 0}.reversed .project-copy{padding:0 0 0 32px}.project-copy h2{font-size:44px}.project-copy h3{font-size:23px}.project-copy p{font-size:19px}.leaf-project{width:280px;left:-218px;top:267px}.cacau{width:150px;right:-23px;top:-32px}.caju{width:105px;left:15px;top:-35px}.ramo-footer{width:160px;height:160px;right:-55px;bottom:-70px}.contact{display:grid;grid-template-columns:57.4% 42.6%;min-height:550px}.contact-form-panel{padding:35px 30px 26px}.contact h2{font-size:clamp(28px,2.7vw,36px);margin-bottom:28px}.contact-message{min-height:auto;padding:40px 47px 70px;align-items:flex-start}.contact-message p{font-size:21px}.tucano{width:185px;left:-83px;bottom:-3px}.footer-inner{flex-direction:row}.footer p,.footer small{font-size:11px}}
 @media(max-width:359px){.hero-title{font-size:25px}.project-inner{padding-inline:23px}.contact h2{font-size:27px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important}}
+
+/* ===== Ajuste fiel à primeira dobra do Figma (quadro 1280 x 871) =====
+   Unidades proporcionais mantêm a composição original em telas de tablet,
+   e o layout mobile-first anterior continua abaixo de 700px. */
+.decor{z-index:100}
+.projects{overflow:visible;isolation:auto}
+@media (min-width:700px){
+  .header{
+    height:min(8.125vw,104px);
+    border-top-width:min(.3125vw,4px);
+  }
+  .nav{
+    min-height:0;
+    height:100%;
+    justify-content:flex-end;
+    padding:0 5.47%;
+  }
+  .mobile-brand,.menu-toggle{display:none}
+  .menu,.menu.open{
+    display:flex;
+    position:static;
+    flex-direction:row;
+    align-items:center;
+    gap:min(4.6875vw,60px);
+    padding:0;
+    background:transparent;
+    box-shadow:none;
+  }
+  .menu a{font-size:min(1.171875vw,15px);font-weight:500}
+  .hero{height:min(29.53125vw,378px);min-height:0;overflow:visible}
+  .hero-inner{
+    position:relative;
+    display:block;
+    height:100%;
+    padding:0;
+    gap:0;
+  }
+  .hero-logo{
+    position:absolute;
+    top:min(4.375vw,56px);
+    left:7.1875%;
+    width:35.3125%;
+    max-width:none;
+    height:auto;
+  }
+  .hero-title{
+    position:absolute;
+    top:min(4.921875vw,63px);
+    right:4.5%;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+    justify-self:auto;
+    gap:0;
+    width:auto;
+    max-width:none;
+    margin:0;
+    font-family:var(--title);
+    font-size:min(4.6875vw,60px);
+    font-weight:400;
+    line-height:1.03;
+    text-align:right;
+    white-space:nowrap;
+  }
+  .hero-title span,.hero-title strong{white-space:nowrap}
+  .hero-title strong{
+    font-family:inherit;
+    font-size:min(5vw,64px);
+    font-weight:400;
+    line-height:1.03;
+  }
+  .leaf-top{
+    width:min(30.46875vw,390px);
+    left:max(-50px,-3.90625vw);
+    top:max(-145px,-11.328125vw);
+    right:auto;
+    bottom:auto;
+    transform:rotate(-10deg);
+    z-index:100;
+  }
+  .leaf-right{
+    width:min(35.546875vw,455px);
+    top:min(11.875vw,152px);
+    right:max(-153px,-11.953125vw);
+    left:auto;
+    bottom:auto;
+    transform:scaleY(-1);
+    z-index:100;
+  }
+  .about{
+    min-height:min(32.03125vw,410px);
+    border-top-width:min(1.875vw,24px);
+  }
+  .about-inner{
+    padding:min(2.734375vw,35px) 2.890625% min(3.515625vw,45px);
+  }
+  .about h2{
+    margin-bottom:min(.859375vw,11px);
+    font-size:min(3.75vw,48px);
+    line-height:1.04;
+  }
+  .about p{
+    font-size:min(1.875vw,24px);
+    line-height:1.32;
+    max-width:992px;
+    margin:0 0 min(.46875vw,6px);
+  }
+}
+/* O bloco original para smartphones permanece independente do desktop. */
