@@ -195,3 +195,63 @@
 @media(prefers-reduced-motion:reduce){
   .js-reveal .reveal,.js-reveal .reveal.is-visible{opacity:1;transform:none;transition:none;will-change:auto}
 }
+
+
+/* Mobile only: decorative fruit/leaf images should never cover project text.
+   Crop overspill at project boundaries; keep content on a higher layer. */
+@media (max-width: 699px) {
+  .project {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .project-inner {
+    position: relative;
+    z-index: 3;
+    padding: 36px 24px 42px;
+  }
+  .project-copy,
+  .project-copy h2,
+  .project-copy h3,
+  .project-copy p {
+    position: relative;
+    z-index: 4;
+  }
+  .project-photo {
+    position: relative;
+    z-index: 3;
+  }
+  .project .leaf-project,
+  .project .cacau,
+  .project .caju,
+  .project .ramo-footer {
+    z-index: 1;
+    pointer-events: none;
+  }
+  .project .leaf-project {
+    width: 125px;
+    left: -110px;
+    top: 165px;
+    transform: rotate(-64deg);
+  }
+  .project .cacau {
+    width: 78px;
+    right: -35px;
+    top: -55px;
+  }
+  .project .caju {
+    width: 65px;
+    left: -8px;
+    top: -49px;
+    transform: rotate(-14deg);
+  }
+  .project .ramo-footer {
+    width: 68px;
+    height: 80px;
+    right: -13px;
+    bottom: -17px;
+  }
+  .project-copy h3 {
+    padding-right: 8px;
+  }
+}
