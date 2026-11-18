@@ -701,3 +701,27 @@
     transform: none;
   }
 }
+
+
+/* Ícone final da designer: PNG RGBA original, recortado apenas nas margens
+   transparentes, mantendo todos os pixels, cores e bordas sem quantização. */
+.project.red > .ramo-footer {
+  width: 86px;
+  height: auto;
+  right: 7px;
+  left: auto;
+  bottom: 10px;
+  top: auto;
+  object-fit: contain;
+  transform: none;
+  image-rendering: auto;
+  z-index: 95;
+}
+@media (max-width: 699px) {
+  .project.red > .ramo-footer {
+    width: 62px;
+    right: 7px;
+    bottom: 9px;
+    height: auto;
+  }
+}
