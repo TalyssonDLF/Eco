@@ -457,3 +457,21 @@
 
 /* Remove a faixa cinza entre os projetos e o formulário em todas as telas. */
 .contact { border-top: 0; }
+
+
+/* Desktop: alinha o tucano e seu galho à borda vertical do painel vinho. */
+@media (min-width: 700px) {
+  .contact-message {
+    position: relative;
+    overflow: visible;
+  }
+  .contact-message .tucano {
+    position: absolute;
+    width: 178px;
+    max-width: none;
+    left: 6px;
+    right: auto;
+    bottom: -18px;
+    z-index: 110;
+  }
+}
