@@ -635,3 +635,13 @@
     display: none;
   }
 }
+
+
+/* Alinha o título do contato à mesma borda esquerda dos campos do formulário. */
+.contact-form-inner > .heading {
+  width: 100%;
+  max-width: 530px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
