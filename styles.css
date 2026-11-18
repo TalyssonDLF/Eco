@@ -358,3 +358,27 @@
     z-index: 95;
   }
 }
+
+
+/*
+ * Refinamento do rodapé: a linha inferior do galho do tucano coincide
+ * com a borda inferior do painel vinho. O próprio PNG tem uma cauda que
+ * continua abaixo do galho, por isso o offset depende do tamanho renderizado.
+ * A borda preta decorativa do cabeçalho foi removida em TODAS as larguras.
+ */
+.header {
+  border-top: 0;
+}
+@media (max-width: 699px) {
+  .contact-message .tucano {
+    right: 10px;
+    left: auto;
+    bottom: -22px;
+    width: 105px;
+  }
+}
+@media (min-width: 700px) {
+  .contact-message .tucano {
+    bottom: clamp(-47px, -3.57vw, -40px);
+  }
+}
